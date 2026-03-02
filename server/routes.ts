@@ -53,7 +53,7 @@ export async function registerRoutes(
     try {
       const archivePath = path.join(process.cwd(), "classroom-ai-codebase.tar.gz");
       execSync(
-        `tar czf ${archivePath} --exclude='node_modules' --exclude='.git' --exclude='.cache' --exclude='.local' --exclude='.config' --exclude='.upm' --exclude='.replit' --exclude='replit.nix' --exclude='.breakpoints' --exclude='classroom-ai-codebase.tar.gz' -C ${process.cwd()} .`
+        `tar czf ${archivePath} --exclude='node_modules' --exclude='.git' --exclude='.cache' --exclude='.local' --exclude='.config' --exclude='.upm' --exclude='.breakpoints' --exclude='classroom-ai-codebase.tar.gz' -C ${process.cwd()} .`
       );
       res.setHeader("Content-Type", "application/gzip");
       res.setHeader("Content-Disposition", "attachment; filename=classroom-ai-codebase.tar.gz");
